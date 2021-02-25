@@ -11,10 +11,10 @@ def index():
     posts = mongo.db.posts.find()
     return render_template("index.html", mars= )
 
-@app.route('/scrape_assignement')
-def scrape_assignment():
+@app.route('/scrape')
+def scrape_mars():
     mars_mission = mongo.db.mars_mission
-    data = scrape_assignment.scrape()
+    data = scrape_mars.scrape()
 
 
 if __name__ == "__main__":

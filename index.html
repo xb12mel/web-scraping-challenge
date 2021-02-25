@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Mars Mission</title>
+  </head>
+
+  <body>
+    <h1>Mars Mission</h1>
+    <!-- {{ welcome_message| safe}} -->
+    <a href="/scrape">Scrape</a>
+    
+    {% for post in posts %}
+    <div>
+      <p>{{ post.price }}</p>
+      <img src="{{ post.image }}" />
+      <div>
+        <b>{{ post.title }}</b>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
