@@ -1,21 +1,45 @@
-<html>
-  <head>
-    <title>Mars Mission</title>
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <title>Web Scrape Challenge</title>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
   <body>
-    <h1>Mars Mission</h1>
-    <!-- {{ welcome_message| safe}} -->
-    <a href="/scrape">Scrape</a>
+    <div class="container">
+        <div class="jumbotron text-center">
+          <h1>{{ text }}</h1>
+        </div>
+    </div>
+
+    <img src="{{url_for('static', filename='cerberus_enhanced.tif')}}" align="middle" />
     
-    {% for post in posts %}
-    <div>
-      <p>{{ post.price }}</p>
-      <img src="{{ post.image }}" />
-      <div>
-        <b>{{ post.title }}</b>
+    {% image in images %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ title }}</h4>
+        </div>
       </div>
     </div>
+
     {% endfor %}
+
   </body>
 </html>
+
+
+
+
+<!-- hemisphere_image_urls = [{"title":"Cerberus", "img_url": cerberus},
+{"title":"Schiaparelli", "img_url":schiaparelli},
+{"title":"Surtis", "img_url":syrtis},
+{"title":"Valles", "img_url":valles}
+]
+
+for x in range(len(hemisphere_image_urls)):
+print(hemisphere_image_urls[x]['title'])
+print(hemisphere_image_urls[x]['img_url'] + '\n') -->
